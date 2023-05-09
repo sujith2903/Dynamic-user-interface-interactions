@@ -1,42 +1,144 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
 svg{
     width: 50px;
     height: auto;
     cursor: pointer;
 }
 
+ul, li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 .menubar{
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-ul{
+.menu-items, .more-items{
     padding: 0px;
-    margin: 0;
-    height: 0;
+    width: 100%;
+    max-height: 0px;
     overflow: hidden;
     background-color: rgb(138, 188, 233);
-    transition: height 200ms ease-in-out;
+    transition: max-height 600ms ease-in-out;
 }
 
-li{
+.menu-item, .more-item, .mobile-item{
     list-style: none;
-    padding: 10px;
-    margin: 0;
     cursor: pointer;
-}
-
-/*Works with Javascript click*/
-ul.pop{
-    height: 200px;
+    text-align: center;
+    margin: 10px;
     padding: 10px;
 }
 
-li:hover {
+.menu-items.pop{
+    max-height: 200px;
+}
+
+.menu-item:hover, .more-item:hover {
     background-color: rgb(44, 138, 219);
 }
 
-/* Works with out Javascript on hover
-.menubar:hover ul{
-  height: 200px;
-  padding: 10px;
+.mobile-bar{
+    display: flex;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
 }
-*/
+
+.mobile-items{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.more-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.more{
+    padding: 10px;
+}
+
+.more-items{
+    width: auto;
+    position: absolute;
+    top:30px;
+}
+
+.more-items.pop{
+    max-height: 1000px;
+}
+
+.more-items li:nth-child(1) {
+    display: none;
+}
+
+.more-items li:nth-child(2) {
+    display: none;
+}
+
+.more-items li:nth-child(3) {
+    display: none;
+}
+
+.more-items li:nth-child(4){
+    display: none;
+}
+
+
+@media (max-width : 800px ) {
+    .mobile-items li:nth-child(7){
+        display: none;
+    }  
+
+    .more-items li:nth-child(4){
+        display: block;
+    }
+}
+
+@media (max-width : 700px) {
+    .mobile-items li:nth-child(6) {
+        display: none;
+    }
+
+    .more-items li:nth-child(3) {
+        display: block;
+    }
+}
+
+@media (max-width : 600px) {
+    .mobile-items li:nth-child(5) {
+        display: none;
+    }
+
+    .more-items li:nth-child(2) {
+        display: block;
+    }
+}
+
+@media (max-width : 500px) {
+    .mobile-items li:nth-child(4) {
+        display: none;
+    }
+
+    .more-items li:nth-child(1) {
+        display: block;
+    }
+}
