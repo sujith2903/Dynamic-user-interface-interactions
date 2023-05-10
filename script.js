@@ -20,3 +20,51 @@ more.addEventListener('mouseover', () => {
 more.addEventListener('mouseout', () => {
     moreItems.classList.remove('pop')
 })
+
+const leftArrow = document.querySelector('.left-arrow')
+const rightArrow = document.querySelector('.right-arrow')
+const photos = document.querySelector('.photos')
+
+leftArrow.addEventListener('click', () => {
+    
+    let currentSlide
+    let nextSlide
+    
+    for (let i = 0; i < photos.children.length;i++){
+        
+        if (photos.children[i].classList.contains('show')) {
+            currentSlide = photos.children[i]
+            nextSlide = photos.children[i-1]
+        }
+    }
+    
+    if (currentSlide != photos.firstElementChild) {
+        currentSlide.classList.remove('show')
+        nextSlide.classList.add('show')
+    }else {
+        currentSlide.classList.remove('show')
+        photos.lastElementChild.classList.add('show')
+    }
+})
+
+rightArrow.addEventListener('click', () => {
+    
+    let currentSlide
+    let nextSlide
+    
+    for (let i = 0; i < photos.children.length;i++){
+        
+        if (photos.children[i].classList.contains('show')) {
+            currentSlide = photos.children[i]
+            nextSlide = photos.children[i+1]
+        }
+    }
+
+    if (currentSlide != photos.lastElementChild) {
+        currentSlide.classList.remove('show')
+        nextSlide.classList.add('show')
+    } else {
+        currentSlide.classList.remove('show')
+        photos.firstElementChild.classList.add('show')
+    }
+})

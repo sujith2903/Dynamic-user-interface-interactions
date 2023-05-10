@@ -161,8 +161,10 @@ ul, li{
 .photos{
     display: flex;
     width: 70%;
-    border:10px solid rgb(255, 0, 0);
+    border:10px solid rgb(0, 0, 0);
+    border-radius: 10px;
     overflow: hidden;
+    justify-content: center;
 }
 
 .dots{
@@ -185,4 +187,20 @@ svg.dot:hover{
 img{
     height: 500px;
     width: auto;
+}
+
+.photos img:nth-child(1),
+.photos img:nth-child(2),
+.photos img:nth-child(3),
+.photos img:nth-child(4),
+.photos img:nth-child(5){
+    display: none;
+}
+
+.photos img.show:nth-child(1),
+.photos img.show:nth-child(2),
+.photos img.show:nth-child(3),
+.photos img.show:nth-child(4),
+.photos img.show:nth-child(5){
+    display: block;
 }
