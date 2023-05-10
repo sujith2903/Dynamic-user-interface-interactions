@@ -27,7 +27,7 @@ const photos = document.querySelector('.photos')
 const dots = document.querySelector('.dots')
 let currentSlide
 let nextSlide
-let index
+let index = 0
 
 leftArrow.addEventListener('click', () => {
     
@@ -103,3 +103,28 @@ dots.addEventListener('click', (event) => {
         dots.children[index].firstElementChild.classList.add('active')
     }
 })
+
+function timer() {
+    
+    if (index <= 4) {
+        
+        for (let i = 0; i < photos.children.length;i++){
+           photos.children[i].classList.remove('show')
+        }
+
+        photos.children[index].classList.add('show')
+
+        for (let i = 0; i < dots.children.length; i++){
+            dots.children[i].firstElementChild.classList.remove('active')
+        }
+
+        dots.children[index].firstElementChild.classList.add('active')
+
+        index = index + 1
+        
+    } else {
+        index = 0
+    }
+}
+
+setInterval(timer, 5000)
