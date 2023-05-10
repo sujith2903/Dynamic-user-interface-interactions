@@ -2,6 +2,8 @@
 
 This mini project is a part of the Odin project curriculum. The website shows a simple drop down menu, A progressively collapsing menu, An image slider.
 
+Live : [UI Interactions](https://sujith2903.github.io/Dynamic-user-interface-interactions/)
+
 ## Drop Down Menu
   Hover over the three line icon to let the drop down menu appear
   
